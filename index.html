@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Select2 - Loki Addons</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		<style>
+			.bgLeft{
+				background-color: #1694CA;
+			}
+			.searchInput{
+				background: #1383b3;
+				border: 1px solid #ddd;
+				box-shadow: inset 0 1px 3px rgba(0,0,0,.06);
+				border: 0;
+				color: white;
+			}
+			.searchInput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			  color: white;
+			  opacity: 1; /* Firefox */
+			}
+
+			.searchInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			  color: white;
+			}
+
+			.searchInput::-ms-input-placeholder { /* Microsoft Edge */
+			  color: white;
+			}
+			.titleSelect2{
+				font-family: "Montserrat","Helvetica Neue","Helvetica","Arial",sans-serif;
+			}
+			.leftMenu{
+				background: #38424D;
+			}
+			.leftMenuActivated{
+				background: #2d353e !important;
+			}
+		</style>
+	</head>
+	<body class="container-fluid vh-100">
+		<div class="row h-100">
+			<div class="col-2 bgLeft text-white">
+				<div class="row d-flex flex-column h-100">
+					<div class="col-auto pb-3 mx-1">
+						<div class="row">
+							<div class="col text-center">
+								<div class="row">
+									<div class="col-12">
+										Select2 
+									</div>
+									<div class="col-12">
+										Loki Addons
+									</div>
+								</div> 
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<input type="text" class="form-control form-control-sm searchInput" placeholder="Search" aria-label="Search">
+							</div>
+						</div>
+					</div>
+					<div class="col-12 flex-grow-1 pe-0 leftMenu">
+						<ol class="list-group-numbered pt-3 px-1">
+							<li class="list-group-item py-1">Getting Started</li>
+							<li class="list-group-item py-1">Troubleshooting</li>
+							<li class="list-group-item py-1">Configuration</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<div class="col-10">
+				AA
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	</body>
+</html>
