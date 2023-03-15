@@ -11,11 +11,15 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 	$(selectElements).each(function() {
 		var thisObject = this;
 		if($(thisObject).hasClass("select2-hidden-accessible") == false){
-			if($(thisObject).data("disappear-search-bar") != "" && $(thisObject).data("disappear-search-bar") != null && $(thisObject).data("disappear-search-bar") == true){
-				var dropdownExtraClasses = "no-search";
-			}else{
-				var dropdownExtraClasses = null;
-			}
+			var dropdownExtraClasses = null;
+			/**
+				Already implemented in Select2 version 4.0.3 with data-minimum-results-for-search="Infinity"
+				if($(thisObject).data("disappear-search-bar") != "" && $(thisObject).data("disappear-search-bar") != null && $(thisObject).data("disappear-search-bar") == true){
+					var dropdownExtraClasses = "no-search";
+				}else{
+					var dropdownExtraClasses = null;
+				}
+			**/
 			if($(thisObject).data("dropdown-auto-width") != "" && $(thisObject).data("dropdown-auto-width") != null && $(thisObject).data("dropdown-auto-width") == true){
 				var dropdownAutoWidth = $(thisObject).data("dropdown-auto-width");
 			}else{
@@ -86,7 +90,7 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 				if($(thisObject).find("option[value='']").length > 0){
 					placeholder = $(thisObject).find("option[value='']").html();
 				}else{
-					if((thisObject).find("option[disabled]").length > 0){
+					if($(thisObject).find("option[disabled]").length > 0){
 						placeholder = $(thisObject).find("option[disabled]").html();
 					}else{
 						placeholder = "Select an Item";

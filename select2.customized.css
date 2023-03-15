@@ -560,4 +560,9 @@
 .select2-container--classic.select2-container--open .select2-dropdown{
     border-color:#5897fb
 }
- 
+/**
+	disappear-search-bar
+**/
+.select2-container .no-search .select2-search{
+	display: none;
+}
