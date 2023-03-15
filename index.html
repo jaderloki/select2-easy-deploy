@@ -59,6 +59,20 @@
 				background: #1694CA;
 				color: white;
 			}
+			.borderCodeExample{
+				border-color: #1694CA !important;
+			}
+			.textColorBlue{
+				color: #1694CA;
+			}
+			.vrColor{
+				background-color: #1694CA !important;
+				opacity: 1;
+			}
+			.extensionForHr{
+				background-color: #1694CA !important;
+				height: 1px;
+			}
 		</style>
 	</head>
 	<body class="container-fluid vh-100">
@@ -105,84 +119,160 @@
 							<div class="col-12 pt-1">
 								This Plugin comes with an auto deploy for all select elements in a page with the class "select2-select" by executing the function "buildSelect2" onReady event.
 								You can deploy the following data-target to a select object to customize your deploy:
-								<ul class="list-group pt-2 ps-5">
-									<li class="list-group-item border-0">
-										<div class="row">
-											<div class="col h5 titleTopic">
-												data-dropdown-auto-width
-											</div>
+								<div class="row">
+									<div class="col position-relative">
+										<div class="position-absolute h-100 mt-3" style="
+											top: 0%;
+											left: 4%;
+										">
+											<div class="vr vrColor h-100"></div>
 										</div>
-										<div class="row">
-											<div class="col">
-												<div class="row">
-													<div class="col">
-														Detach the dropdown box from its select2 field width, it becomes useful when the select2 container is smaller then the width of its search contents
+										<ul class="list-group pt-2 ps-5">
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-dropdown-auto-width
+													</div>
+													<div class="position-absolute" style="
+														bottom: 0%;
+														left: 0%;
+													">
+														<div class="extensionForHr">
+														
+														</div>
 													</div>
 												</div>
 												<div class="row">
 													<div class="col">
 														<div class="row">
-															<div class="col-12">
-																Example:
+															<div class="col">
+																Detach its dropdown box from its select2 field width, it becomes useful when the select2 container is smaller then the width of its search contents
 															</div>
 														</div>
 														<div class="row">
-															<div class="col-12">
+															<div class="col">
 																<div class="row">
-																	<div class="col-8 codeExample">
-																		<h2>Example:</h2>
-																		<pre class="overflow-hidden">
-																			
-<code class="text-white">&lt;select class=&quot;select2-select&quot; data-dropdown-auto-width=&quot;0&quot;&gt;
+																	<div class="col">
+																		With data-dropdown-auto-width="0"
+																	</div>
+																</div>
+																<div class="row mx-auto">
+																	<div class="col">
+																		<div class="row">
+																			<div class="col">
+																				<div class="row">
+																					<div class="col-12">
+																						<div class="row h-100">
+																							<div class="col-8 px-0 d-flex flex-column">
+																								<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																									border-radius: 10px 0 0 0;
+																								">
+																									<div class="col textColorBlue">
+																										Example Code:
+																									</div>
+																								</div>
+																								<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																									<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-dropdown-auto-width=&quot;0&quot;&gt;
 	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
 	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
 	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
-&lt;/select&gt;</code>
-																		</pre>
-																	</div>
-																	<div class="col-4 m-auto">
-																		<div class="row">
-																			<label class="col-auto mx-auto">
-																				with data-dropdown-auto-width="0"
-																			</label>
-																		</div>
-																		<div class="row">
-																			<div class="col-3 mx-auto border border-5 border-5 p-3">
-																				<select class="select2-select" data-dropdown-auto-width="0">
-																					<option value="1">Option One</option>
-																					<option value="2">Option Two</option>
-																					<option value="3">Option Three</option>
-																				</select>
+&lt;/select&gt;</code></pre>
+																									</div>
+																								</div>
+																							</div>
+																							<div class="col-4 px-0 d-flex flex-column">
+																								<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																									border-radius: 0 10px 0 0;
+																								">
+																									<div class="col textColorBlue">
+																										Visual Example:
+																									</div>
+																								</div>
+																								<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																									<div class="col-3 mx-auto border border-5 border-5 p-3">
+																										<select class="select2-select" data-dropdown-auto-width="0">
+																											<option value="1">Option One</option>
+																											<option value="2">Option Two</option>
+																											<option value="3">Option Three</option>
+																										</select>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
 																</div>
 															</div>
-															<div class="col-12">
+														</div>
+														<div class="row">
+															<div class="col">
 																<div class="row">
-																	<label for="dataDropdownAutoWidthActivated" class="col-auto mx-auto">
-																		with data-dropdown-auto-width="1"
-																	</label>
+																	<div class="col">
+																		With data-dropdown-auto-width="1"
+																	</div>
 																</div>
-																<div class="row">
-																	<div class="col-3 mx-auto border border-5 border-5 p-3">
-																		<select class="select2-select" data-dropdown-auto-width="1">
-																			<option value="1">Option One</option>
-																			<option value="2">Option Two</option>
-																			<option value="3">Option Three</option>
-																		</select>
+																<div class="row mx-auto">
+																	<div class="col">
+																		<div class="row">
+																			<div class="col">
+																				<div class="row">
+																					<div class="col-12">
+																						<div class="row h-100">
+																							<div class="col-8 px-0 d-flex flex-column">
+																								<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																									border-radius: 10px 0 0 0;
+																								">
+																									<div class="col textColorBlue">
+																										Example Code:
+																									</div>
+																								</div>
+																								<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																									<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-dropdown-auto-width=&quot;1&quot;&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																									</div>
+																								</div>
+																							</div>
+																							<div class="col-4 px-0 d-flex flex-column">
+																								<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																									border-radius: 0 10px 0 0;
+																								">
+																									<div class="col textColorBlue">
+																										Visual Example:
+																									</div>
+																								</div>
+																								<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																									<div class="col-3 mx-auto border border-5 border-5 p-3">
+																										<select class="select2-select" data-dropdown-auto-width="1">
+																											<option value="1">Option One</option>
+																											<option value="2">Option Two</option>
+																											<option value="3">Option Three</option>
+																										</select>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item border-0">A list item</li>
-									<li class="list-group-item border-0">A list item</li>
-								</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
