@@ -220,7 +220,7 @@
 																														Example Code:
 																													</div>
 																												</div>
-																												<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
 																													<div class="col">
 <pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-dropdown-auto-width=&quot;0&quot;&gt;
 	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
@@ -295,7 +295,7 @@
 																														Example Code:
 																													</div>
 																												</div>
-																												<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
 																													<div class="col">
 <pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-dropdown-auto-width=&quot;1&quot;&gt;
 	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
@@ -389,7 +389,7 @@
 																														Example Code:
 																													</div>
 																												</div>
-																												<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
 																													<div class="col">
 <pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; multiple&gt;
 	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
@@ -436,7 +436,7 @@
 											<li class="list-group-item border-0">
 												<div class="row position-relative">
 													<div class="col h5 titleTopic">
-														data-dropdown-auto-width attribute
+														data-disable-search-filter-by-pressing-enter-while-focused attribute
 													</div>
 													<div class="position-absolute " style="
 														bottom: 8px;
@@ -483,7 +483,7 @@
 																			<div class="col">
 																				<div class="row mb-1 position-relative">
 																					<div class="col h5 titleTopic">
-																						With data-execute-search-filter-by-typing-while-focused="0"
+																						With data-disable-search-filter-by-pressing-enter-while-focused="0"
 																					</div>
 																					<div class="position-absolute " style="
 																						bottom: 8px;
@@ -517,9 +517,10 @@
 																														Example Code:
 																													</div>
 																												</div>
-																												<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
 																													<div class="col">
-<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-dropdown-auto-width=&quot;0&quot;&gt;
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-disable-search-filter-by-pressing-enter-while-focused=&quot;0&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
 	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
 	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
 	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
@@ -536,8 +537,9 @@
 																													</div>
 																												</div>
 																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
-																													<div class="col-3 mx-auto border border-5 border-5 p-3">
-																														<select class="select2-select" data-execute-search-filter-by-typing-while-focused="0">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-disable-search-filter-by-pressing-enter-while-focused="0">
+																															<option disabled selected value="">Select an Item</option>
 																															<option value="1">Option One</option>
 																															<option value="2">Option Two</option>
 																															<option value="3">Option Three</option>
@@ -558,7 +560,7 @@
 																			<div class="col">
 																				<div class="row position-relative">
 																					<div class="col h5 titleTopic">
-																						With data-execute-search-filter-by-typing-while-focused="1"
+																						With data-disable-search-filter-by-pressing-enter-while-focused="1"
 																					</div>
 																					<div class="position-absolute " style="
 																						bottom: 8px;
@@ -592,9 +594,14 @@
 																														Example Code:
 																													</div>
 																												</div>
-																												<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
 																													<div class="col">
-<pre class="p-0 m-0"><code class="text-white"></code></pre>
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-disable-search-filter-by-pressing-enter-while-focused=&quot;1&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
 																													</div>
 																												</div>
 																											</div>
@@ -607,8 +614,9 @@
 																													</div>
 																												</div>
 																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
-																													<div class="col-3 mx-auto border border-5 border-5 p-3">
-																														<select class="select2-select" data-execute-search-filter-by-typing-while-focused="1">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-disable-search-filter-by-pressing-enter-while-focused="1">
+																															<option disabled selected value="">Select an Item</option>
 																															<option value="1">Option One</option>
 																															<option value="2">Option Two</option>
 																															<option value="3">Option Three</option>

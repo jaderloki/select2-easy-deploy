@@ -30,11 +30,12 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 			}else{
 				var multiple = false;
 			}
-			if($(thisObject).data("execute-search-filter-by-typing-while-focused") != ""){
-				executeSearchFilterByTypingWhileFocused = $(thisObject).data("execute-search-filter-by-typing-while-focused");
+			if($(thisObject).data("disable-search-filter-by-pressing-enter-while-focused") != ""){
+				disableSearchFilterByPressingEnterWhileFocused = $(thisObject).data("disable-search-filter-by-pressing-enter-while-focused") == 1;
 			}else{
-				executeSearchFilterByTypingWhileFocused = true;
+				disableSearchFilterByPressingEnterWhileFocused = true;
 			}
+			console.log("disableSearchFilterByPressingEnterWhileFocused", disableSearchFilterByPressingEnterWhileFocused);
 			if($(thisObject).data("disable-search-bar-after-deselection") == true){
 				var disableSearchBarAfterDeselection = true;
 			}else{
@@ -110,7 +111,7 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 					theme: "bootstrap",
 					language: "pt-BR",
 					multiple: multiple,
-					executeEventAfterInteraction: executeEventAfterInteraction,
+					disableSearchFilterByPressingEnterWhileFocused: disableSearchFilterByPressingEnterWhileFocused,
 					placeholder: placeholder,
 					dropdownCssClass : dropdownExtraClasses,
 					data: dataPreInformed,
@@ -189,7 +190,7 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 					theme: "bootstrap",
 					multiple: multiple,
 					language: "pt-BR",
-					executeSearchFilterByTypingWhileFocused: executeSearchFilterByTypingWhileFocused,
+					disableSearchFilterByPressingEnterWhileFocused: disableSearchFilterByPressingEnterWhileFocused,
 					placeholder: placeholder,
 					selectOnClose: false,
 					dropdownAutoWidth : dropdownAutoWidth,

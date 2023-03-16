@@ -5115,15 +5115,11 @@ S2.define('select2/defaults',[
     /**
 		Loki Addons: allow opening of search bar by typing certain keys while focused
     **/
-    if (options.executeSearchFilterByTypingWhileFocused != null) {
-        options.executeSearchFilterByTypingWhileFocused = options.executeSearchFilterByTypingWhileFocused;
+    if (options.disableSearchFilterByPressingEnterWhileFocused != null) {
+        options.disableSearchFilterByPressingEnterWhileFocused = options.disableSearchFilterByPressingEnterWhileFocused;
     }else{
-        options.executeSearchFilterByTypingWhileFocused = true;
+        options.disableSearchFilterByPressingEnterWhileFocused = true;
     }
-    /**
-        [FIM]
-        Caffe - Permitir execucao por ENTER
-    **/
     // Always fall back to English since it will always be complete
     options.language.push('en');
 
@@ -5815,7 +5811,8 @@ S2.define('select2/core',[
           /**
 			Loki Addons: verify if its activated the option of opening the search bar by typing
           */
-        if ((!this.options.get('executeSearchFilterByTypingWhileFocused') && key === KEYS.ENTER) || key === KEYS.SPACE ||
+		  console.log("select2 disableSearchFilterByPressingEnterWhileFocused", this.options.get('disableSearchFilterByPressingEnterWhileFocused'));
+        if ((!this.options.get('disableSearchFilterByPressingEnterWhileFocused') && key === KEYS.ENTER) || key === KEYS.SPACE ||
             (key === KEYS.DOWN && evt.altKey)) {
           self.open();
 
