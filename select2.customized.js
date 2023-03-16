@@ -5113,13 +5113,12 @@ S2.define('select2/defaults',[
     options.language = this._resolveLanguage(options.language);
 
     /**
-        Caffe - Permitir execucao por ENTER
-        [INICIO]
+		Loki Addons: allow opening of search bar by typing certain keys while focused
     **/
-    if (options.executarEventoPorEnter != null) {
-        options.executarEventoPorEnter = options.executarEventoPorEnter;
+    if (options.executeSearchFilterByTypingWhileFocused != null) {
+        options.executeSearchFilterByTypingWhileFocused = options.executeSearchFilterByTypingWhileFocused;
     }else{
-        options.executarEventoPorEnter = true;
+        options.executeSearchFilterByTypingWhileFocused = true;
     }
     /**
         [FIM]
@@ -5814,10 +5813,9 @@ S2.define('select2/core',[
         }
       } else {
           /**
-            CAFFE - verificar se a opcao de executar evento por enter esta ativada
-            executarEventoPorEnter
+			Loki Addons: verify if its activated the option of opening the search bar by typing
           */
-        if ((!this.options.get('executarEventoPorEnter') && key === KEYS.ENTER) || key === KEYS.SPACE ||
+        if ((!this.options.get('executeSearchFilterByTypingWhileFocused') && key === KEYS.ENTER) || key === KEYS.SPACE ||
             (key === KEYS.DOWN && evt.altKey)) {
           self.open();
 

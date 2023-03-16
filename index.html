@@ -76,8 +76,8 @@
 			}
 		</style>
 	</head>
-	<body class="container-fluid vh-100">
-		<div class="row h-100">
+	<body class="container-fluid vh-100 d-flex flex-column">
+		<div class="row h-100 flex-grow-1">
 			<div class="col-2 bgLeft text-white">
 				<div class="row d-flex flex-column h-100">
 					<div class="col-auto py-3 mx-1">
@@ -122,24 +122,24 @@
 								You can deploy the following data-target to a select object to customize your deploy:
 								<div class="row">
 									<div class="col position-relative">
-										<div class="position-absolute h-100 mt-3" style="
+										<div class="position-absolute d-none h-100 mt-3" style="
 											top: 0%;
 											left: 48px;
 										">
-											<div class="vr vrConfiguration h-100"></div>
+											<div class="vr vrConfiguration h-100 pb-1"></div>
 										</div>
 										<ul class="list-group pt-2 ps-5">
 											<li class="list-group-item border-0">
 												<div class="row position-relative">
 													<div class="col h5 titleTopic">
-														data-dropdown-auto-width
+														data-dropdown-auto-width attribute
 													</div>
-													<div class="position-absolute" style="
+													<div class="position-absolute d-none" style="
 														bottom: 8px;
 														left: -28.5px;
 													">
 														<div class="position-relative">
-															<div class="position-absolute" style="
+															<div class="position-absolute d-none" style="
 																top: -12px;
 																left: -7px;
 															">
@@ -159,8 +159,8 @@
 															</div>
 														</div>
 														<div class="row">
-															<div class="col position-relative">
-																<div class="position-absolute h-100 mt-2" style="
+															<div class="col position-relative pb-3">
+																<div class="position-absolute d-none h-100 mt-2 pb-1" style="
 																	top: 0%;
 																	left: 25px;
 																">
@@ -174,12 +174,12 @@
 																					<div class="col h5 titleTopic">
 																						With data-dropdown-auto-width="0"
 																					</div>
-																					<div class="position-absolute" style="
+																					<div class="position-absolute d-none" style="
 																						bottom: 8px;
 																						left: -28.5px;
 																					">
 																						<div class="position-relative">
-																							<div class="position-absolute" style="
+																							<div class="position-absolute d-none" style="
 																								top: -12px;
 																								left: -13px;
 																							">
@@ -249,12 +249,12 @@
 																					<div class="col h5 titleTopic">
 																						With data-dropdown-auto-width="1"
 																					</div>
-																					<div class="position-absolute" style="
+																					<div class="position-absolute d-none" style="
 																						bottom: 8px;
 																						left: -28.5px;
 																					">
 																						<div class="position-relative">
-																							<div class="position-absolute" style="
+																							<div class="position-absolute d-none" style="
 																								top: -12px;
 																								left: -13px;
 																							">
@@ -302,6 +302,292 @@
 																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
 																													<div class="col-3 mx-auto border border-5 border-5 p-3">
 																														<select class="select2-select" data-dropdown-auto-width="1">
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														multiple attribute
+													</div>
+													<div class="position-absolute d-none" style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute d-none" style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="row">
+																	<div class="col">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row h-100">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; multiple&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" multiple>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-dropdown-auto-width attribute
+													</div>
+													<div class="position-absolute d-none" style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute d-none" style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="position-absolute d-none h-100 mt-2 pb-1" style="
+																	top: 0%;
+																	left: 25px;
+																">
+																	<div class="vr vrConfiguration h-100"></div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row mb-1 position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-execute-search-filter-by-typing-while-focused="0"
+																					</div>
+																					<div class="position-absolute d-none" style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute d-none" style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row h-100">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-dropdown-auto-width=&quot;0&quot;&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-3 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-execute-search-filter-by-typing-while-focused="0">
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-execute-search-filter-by-typing-while-focused="1"
+																					</div>
+																					<div class="position-absolute d-none" style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute d-none" style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row h-100">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto px-5 pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white"></code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-3 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-execute-search-filter-by-typing-while-focused="1">
 																															<option value="1">Option One</option>
 																															<option value="2">Option Two</option>
 																															<option value="3">Option Three</option>

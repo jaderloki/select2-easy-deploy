@@ -30,10 +30,10 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 			}else{
 				var multiple = false;
 			}
-			if($(thisObject).data("execute-event-after-interaction") != ""){
-				executeEventAfterInteraction = $(thisObject).data("execute-event-after-interaction");
+			if($(thisObject).data("execute-search-filter-by-typing-while-focused") != ""){
+				executeSearchFilterByTypingWhileFocused = $(thisObject).data("execute-search-filter-by-typing-while-focused");
 			}else{
-				executeEventAfterInteraction = true;
+				executeSearchFilterByTypingWhileFocused = true;
 			}
 			if($(thisObject).data("disable-search-bar-after-deselection") == true){
 				var disableSearchBarAfterDeselection = true;
@@ -189,7 +189,7 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 					theme: "bootstrap",
 					multiple: multiple,
 					language: "pt-BR",
-					executeEventAfterInteraction: executeEventAfterInteraction,
+					executeSearchFilterByTypingWhileFocused: executeSearchFilterByTypingWhileFocused,
 					placeholder: placeholder,
 					selectOnClose: false,
 					dropdownAutoWidth : dropdownAutoWidth,
