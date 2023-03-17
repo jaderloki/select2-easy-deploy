@@ -5811,7 +5811,6 @@ S2.define('select2/core',[
           /**
 			Loki Addons: verify if its activated the option of opening the search bar by typing
           */
-		  console.log("select2 disableSearchFilterByPressingEnterWhileFocused", this.options.get('disableSearchFilterByPressingEnterWhileFocused'));
         if ((!this.options.get('disableSearchFilterByPressingEnterWhileFocused') && key === KEYS.ENTER) || key === KEYS.SPACE ||
             (key === KEYS.DOWN && evt.altKey)) {
           self.open();
