@@ -161,7 +161,7 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 							"</fieldset>";
 							$("body").append(html);
 						}else{
-							$(".colaSelect2").remove();
+							$(".colaSelect2[data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"']").remove();
 						}
 					});
 					$(thisObject).on("select2:close", function(){
