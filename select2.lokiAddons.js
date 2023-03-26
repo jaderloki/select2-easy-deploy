@@ -44,12 +44,12 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 			if($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class") != "" && $(thisObject).data("create-auxiliar-absolute-div-based-on-this-class") != undefined){
 				if($($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")).length > 0){
 					var timeoutAuxiliarDiv = null;
-					$(thisObject).on("select2:open", function(event){
+					$(thisObject).on("select2:resizementCompleted", function(event){
 						//if(timeoutAuxiliarDiv){
 						//	clearTimeout(timeoutAuxiliarDiv);
 						//}
 						//timeoutAuxiliarDiv = setTimeout(function(){
-							var auxiliarAbsoluteDivPosition = null;
+							var auxiliarAbsoluteDivPosition = "right";
 							if($(thisObject).data("auxiliar-absolute-div-position") != "" && $(thisObject).data("auxiliar-absolute-div-position") != undefined){
 								auxiliarAbsoluteDivPosition = $(thisObject).data("auxiliar-absolute-div-position");
 							}
@@ -69,38 +69,76 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 							var positionLeft = "0px";
 							var width = 0;
 							var height = 0;
-							$(".select2-container--open").each(function(){
-								if($(this).css("position") == 'absolute'){
-									positionTop = $(this).css("top").replace("px", "");
-									positionLeft = $(this).css("left").replace("px", "");
-									width = $(this).find(".select2-dropdown--below, .select2-dropdown--above").width();
-									height = $(this).find(".select2-dropdown--below, .select2-dropdown--above").height() + $(event.currentTarget).next().height();
+							var dropdownTarget = $(event.currentTarget).data("select2").$dropdown;
+							positionTop = $(dropdownTarget).css("top").replace("px", "");
+							positionLeft = $(dropdownTarget).css("left").replace("px", "");
+							width = $(dropdownTarget).find(".select2-dropdown--below, .select2-dropdown--above").width();
+							height = $(dropdownTarget).find(".select2-dropdown--below, .select2-dropdown--above").height() + $(event.currentTarget).next().height();
+							
+							var viewport = {
+							  top: $(window).scrollTop(),
+							  bottom: $(window).scrollTop() + $(window).height(),
+							  left: 0,
+							  right: $(window).innerWidth()
+							};
+
+							var enoughRoomAbove = viewport.top < parseFloat(positionTop) - height;
+							var enoughRoomBelow = viewport.bottom > parseFloat(positionTop) + height;
+							var enoughRoomLeft = viewport.left < parseFloat(positionLeft) - parseFloat(width) - 5;
+							var enoughRoomRight = viewport.right > parseFloat(positionLeft) + (parseFloat(width) * 2) + 5;
+							var functionToDetectSpaces = function(auxiliarAbsoluteDivPosition, blacklistedPositions){
+								if(enoughRoomAbove == false && auxiliarAbsoluteDivPosition == "top" && blacklistedPositions["bottom"] != true){
+									blacklistedPositions["top"] = true;
+									return "bottom";
 								}
-							});
+								if(enoughRoomBelow == false && auxiliarAbsoluteDivPosition == "bottom" && blacklistedPositions["top"] != true){
+									blacklistedPositions["bottom"] = true;
+									return "top";
+								}
+								if(enoughRoomLeft == false && auxiliarAbsoluteDivPosition == "left" && blacklistedPositions["right"] != true){
+									blacklistedPositions["left"] = true;
+									return "right";
+								}
+								if(enoughRoomBelow == false && auxiliarAbsoluteDivPosition == "right" && blacklistedPositions["left"] != true){
+									blacklistedPositions["right"] = true;
+									return "left";
+								}
+								return auxiliarAbsoluteDivPosition;
+							};
+							var sequencesError = 0;
+							var newAuxiliarAbsoluteDivPosition = auxiliarAbsoluteDivPosition;
+							var blacklistedPositions = {};
+							do{
+								auxiliarAbsoluteDivPosition = newAuxiliarAbsoluteDivPosition;
+								newAuxiliarAbsoluteDivPosition = functionToDetectSpaces(auxiliarAbsoluteDivPosition, blacklistedPositions);
+								if(sequencesError >= 4){
+									console.error("Select2: it wasn't possible create the auxiliar div due to no space around the select2 field");
+									return;
+								}
+								sequencesError++;
+								console.log(blacklistedPositions);
+							}while(auxiliarAbsoluteDivPosition != newAuxiliarAbsoluteDivPosition);
+							auxiliarAbsoluteDivPosition = newAuxiliarAbsoluteDivPosition;
+							
 							switch(auxiliarAbsoluteDivPosition){
 								case "left":
-									positionTop = parseFloat(positionTop) * 0.95;
+									positionTop = parseFloat(positionTop);
 									positionLeft = parseFloat(positionLeft) - parseFloat(width) - 5;
 								break;
 								case "right":
-									positionTop = parseFloat(positionTop) * 0.95;
+									positionTop = parseFloat(positionTop);
 									positionLeft = parseFloat(positionLeft) + parseFloat(width) + 5;
 								break;
 								case "top":
 									positionTop = parseFloat(positionTop) - height;
 								break;
 								case "bottom":
-								default:
-									console.log("bvb", $(event.currentTarget));
-									console.log("aa", event.currentTarget);
 									positionTop = parseFloat(positionTop) + height;
 								break;
 							}
 							var styleHtml = "width:"+width+"px;height:"+height+"px;";
 							styleHtml += "left:"+positionLeft+"px;";
-							if(positionTop != "0px"){
-								styleHtml += "top:"+positionTop+"px;";
-							}
+							styleHtml += "top:"+positionTop+"px;";
 							var html =
 							"<fieldset data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"' class='position-absolute bg-white colaSelect2 border border-warning rounded' style='"+styleHtml+"'>"+
 								"<legend class='bg-warning text-dark'>Minha Cola</legend>"+
@@ -109,7 +147,7 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 								"</div>"+
 							"</fieldset>";
 							$("body").append(html);
-						//}, 500);
+						//}, 250);
 					});
 					$(thisObject).on("select2:close", function(){
 						$(".colaSelect2[data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"']").remove();

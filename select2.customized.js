@@ -2321,6 +2321,7 @@ S2.define('select2/selection/eventRelay',[
     var self = this;
     var relayEvents = [
       'open', 'opening',
+	  'resizementCompleted', // Loki Addons: added the resizementCompleted event to the allowed select2 events
       'close', 'closing',
       'select', 'selecting',
       'unselect', 'unselecting',
@@ -2346,7 +2347,7 @@ S2.define('select2/selection/eventRelay',[
       var evt = $.Event('select2:' + name, {
         params: params
       });
-
+	  
       self.$element.trigger(evt);
 
       // Only handle preventable events if it was one
@@ -4674,6 +4675,10 @@ S2.define('select2/dropdown/attachBody',[
     }
 
     this.$dropdownContainer.css(css);
+	/**
+		Loki Addons: trigger when its dropdown css events are completed
+	**/
+	this.trigger("resizementCompleted");
   };
 
   AttachBody.prototype._resizeDropdown = function () {
