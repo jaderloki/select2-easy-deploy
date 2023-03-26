@@ -43,33 +43,20 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 
 			if($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class") != "" && $(thisObject).data("create-auxiliar-absolute-div-based-on-this-class") != undefined){
 				if($($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")).length > 0){
-					var timeoutAuxiliarDiv = null;
 					$(thisObject).on("select2:resizementCompleted", function(event){
-						//if(timeoutAuxiliarDiv){
-						//	clearTimeout(timeoutAuxiliarDiv);
-						//}
-						//timeoutAuxiliarDiv = setTimeout(function(){
-							var auxiliarAbsoluteDivPosition = "right";
-							if($(thisObject).data("auxiliar-absolute-div-position") != "" && $(thisObject).data("auxiliar-absolute-div-position") != undefined){
-								auxiliarAbsoluteDivPosition = $(thisObject).data("auxiliar-absolute-div-position");
-							}
-							$(".colaSelect2[data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"']").remove();
-							var showUpOnScreen = false;
-							while(!showUpOnScreen){
-								$(".select2-container--open").each(function(){
-									if($(this).css("position") == 'absolute'){
-										var temp = parseFloat($(this).css("left").replace("px", ""));
-										if(temp != undefined && temp > 0 && temp != "NaN"){
-											showUpOnScreen = true;
-										}
-									}
-								});
-							}
+						console.log("wtf");
+						var auxiliarAbsoluteDivPosition = "right";
+						if($(thisObject).data("auxiliar-absolute-div-position") != "" && $(thisObject).data("auxiliar-absolute-div-position") != undefined){
+							auxiliarAbsoluteDivPosition = $(thisObject).data("auxiliar-absolute-div-position");
+						}
+						$(".colaSelect2[data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"']").remove();
+						var dropdownTarget = $(event.currentTarget).data("select2").$dropdown;
+						if($(dropdownTarget).is(":hidden") == false){
 							var positionTop = "0px";
 							var positionLeft = "0px";
 							var width = 0;
 							var height = 0;
-							var dropdownTarget = $(event.currentTarget).data("select2").$dropdown;
+							
 							positionTop = $(dropdownTarget).css("top").replace("px", "");
 							positionLeft = $(dropdownTarget).css("left").replace("px", "");
 							width = $(dropdownTarget).find(".select2-dropdown--below, .select2-dropdown--above").width();
@@ -86,38 +73,64 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 							var enoughRoomBelow = viewport.bottom > parseFloat(positionTop) + height;
 							var enoughRoomLeft = viewport.left < parseFloat(positionLeft) - parseFloat(width) - 5;
 							var enoughRoomRight = viewport.right > parseFloat(positionLeft) + (parseFloat(width) * 2) + 5;
-							var functionToDetectSpaces = function(auxiliarAbsoluteDivPosition, blacklistedPositions){
-								if(enoughRoomAbove == false && auxiliarAbsoluteDivPosition == "top" && blacklistedPositions["bottom"] != true){
-									blacklistedPositions["top"] = true;
-									return "bottom";
-								}
-								if(enoughRoomBelow == false && auxiliarAbsoluteDivPosition == "bottom" && blacklistedPositions["top"] != true){
-									blacklistedPositions["bottom"] = true;
-									return "top";
-								}
-								if(enoughRoomLeft == false && auxiliarAbsoluteDivPosition == "left" && blacklistedPositions["right"] != true){
-									blacklistedPositions["left"] = true;
-									return "right";
-								}
-								if(enoughRoomBelow == false && auxiliarAbsoluteDivPosition == "right" && blacklistedPositions["left"] != true){
-									blacklistedPositions["right"] = true;
-									return "left";
-								}
-								return auxiliarAbsoluteDivPosition;
-							};
-							var sequencesError = 0;
+							if(enoughRoomAbove == false && enoughRoomBelow == false && enoughRoomLeft == false && enoughRoomRight == false){
+								console.error("Select2: it wasn't possible create the auxiliar div due to no space around the select2 field");
+								return false;
+							}
+							
 							var newAuxiliarAbsoluteDivPosition = auxiliarAbsoluteDivPosition;
-							var blacklistedPositions = {};
+							var posTemp = 0;
+							switch(auxiliarAbsoluteDivPosition){
+								case "top":
+									posTemp = 0;
+								break;
+								case "bottom":
+									posTemp = 1;
+								break;
+								case "left":
+									posTemp = 2;
+								break;
+								case "right":
+									posTemp = 3;
+								break;
+							}
 							do{
-								auxiliarAbsoluteDivPosition = newAuxiliarAbsoluteDivPosition;
-								newAuxiliarAbsoluteDivPosition = functionToDetectSpaces(auxiliarAbsoluteDivPosition, blacklistedPositions);
-								if(sequencesError >= 4){
-									console.error("Select2: it wasn't possible create the auxiliar div due to no space around the select2 field");
-									return;
+								var tmp = posTemp;
+								switch(posTemp){
+									case 0:
+										newAuxiliarAbsoluteDivPosition = "top";
+										if(enoughRoomAbove == false){
+											posTemp++;
+											newAuxiliarAbsoluteDivPosition = "bottom";
+										}
+									break;
+									case 1:
+										newAuxiliarAbsoluteDivPosition = "bottom";
+										if(enoughRoomBelow == false){
+											posTemp++;
+											newAuxiliarAbsoluteDivPosition = "top";
+										}
+									break;
+									case 2:
+										newAuxiliarAbsoluteDivPosition = "left";
+										if(enoughRoomLeft == false){
+											posTemp++;
+											newAuxiliarAbsoluteDivPosition = "right";
+										}
+									break;
+									case 3:
+										newAuxiliarAbsoluteDivPosition = "right";
+										if(enoughRoomRight == false){
+											posTemp++;
+											newAuxiliarAbsoluteDivPosition = "left";
+										}
+									break;
+									default:
+										posTemp = 0;
+									break;
 								}
-								sequencesError++;
-								console.log(blacklistedPositions);
-							}while(auxiliarAbsoluteDivPosition != newAuxiliarAbsoluteDivPosition);
+								console.log(tmp, posTemp, tmp != posTemp);
+							}while(tmp != posTemp);
 							auxiliarAbsoluteDivPosition = newAuxiliarAbsoluteDivPosition;
 							
 							switch(auxiliarAbsoluteDivPosition){
@@ -147,7 +160,9 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 								"</div>"+
 							"</fieldset>";
 							$("body").append(html);
-						//}, 250);
+						}else{
+							$(".colaSelect2").remove();
+						}
 					});
 					$(thisObject).on("select2:close", function(){
 						$(".colaSelect2[data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"']").remove();
