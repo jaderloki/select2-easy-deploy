@@ -43,75 +43,73 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 
 			if($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class") != "" && $(thisObject).data("create-auxiliar-absolute-div-based-on-this-class") != undefined){
 				if($($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")).length > 0){
-					$(thisObject).on("select2:open", function(){
-						var auxiliarAbsoluteDivPosition = null;
-						if($(thisObject).data("auxiliar-absolute-div-position") != "" && $(thisObject).data("auxiliar-absolute-div-position") != undefined){
-							auxiliarAbsoluteDivPosition = $(thisObject).data("auxiliar-absolute-div-position");
-						}
-						$(".colaSelect2[data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"']").remove();
-						var showUpOnScreen = false;
-						while(!showUpOnScreen){
+					var timeoutAuxiliarDiv = null;
+					$(thisObject).on("select2:open", function(event){
+						//if(timeoutAuxiliarDiv){
+						//	clearTimeout(timeoutAuxiliarDiv);
+						//}
+						//timeoutAuxiliarDiv = setTimeout(function(){
+							var auxiliarAbsoluteDivPosition = null;
+							if($(thisObject).data("auxiliar-absolute-div-position") != "" && $(thisObject).data("auxiliar-absolute-div-position") != undefined){
+								auxiliarAbsoluteDivPosition = $(thisObject).data("auxiliar-absolute-div-position");
+							}
+							$(".colaSelect2[data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"']").remove();
+							var showUpOnScreen = false;
+							while(!showUpOnScreen){
+								$(".select2-container--open").each(function(){
+									if($(this).css("position") == 'absolute'){
+										var temp = parseFloat($(this).css("left").replace("px", ""));
+										if(temp != undefined && temp > 0 && temp != "NaN"){
+											showUpOnScreen = true;
+										}
+									}
+								});
+							}
+							var positionTop = "0px";
+							var positionLeft = "0px";
+							var width = 0;
+							var height = 0;
 							$(".select2-container--open").each(function(){
 								if($(this).css("position") == 'absolute'){
-									var temp = parseFloat($(this).css("left").replace("px", ""));
-									if(temp != undefined && temp > 0 && temp != "NaN"){
-										showUpOnScreen = true;
-									}
+									positionTop = $(this).css("top").replace("px", "");
+									positionLeft = $(this).css("left").replace("px", "");
+									width = $(this).find(".select2-dropdown--below, .select2-dropdown--above").width();
+									height = $(this).find(".select2-dropdown--below, .select2-dropdown--above").height() + $(event.currentTarget).next().height();
 								}
 							});
-						}
-						var top = "0px";
-						var left = "0px";
-						var bottom = "0px";
-						var right = "0px";
-						var width = 0;
-						var height = 0;
-						$(".select2-container--open").each(function(){
-							if($(this).css("position") == 'absolute'){
-								top = $(this).css("top").replace("px", "");
-								left = $(this).css("left").replace("px", "");
-								width = $(this).find(".select2-dropdown--below, .select2-dropdown--above").width();
-								height = $(this).find(".select2-dropdown--below, .select2-dropdown--above").height();
+							switch(auxiliarAbsoluteDivPosition){
+								case "left":
+									positionTop = parseFloat(positionTop) * 0.95;
+									positionLeft = parseFloat(positionLeft) - parseFloat(width) - 5;
+								break;
+								case "right":
+									positionTop = parseFloat(positionTop) * 0.95;
+									positionLeft = parseFloat(positionLeft) + parseFloat(width) + 5;
+								break;
+								case "top":
+									positionTop = parseFloat(positionTop) - height;
+								break;
+								case "bottom":
+								default:
+									console.log("bvb", $(event.currentTarget));
+									console.log("aa", event.currentTarget);
+									positionTop = parseFloat(positionTop) + height;
+								break;
 							}
-						});
-						switch(auxiliarAbsoluteDivPosition){
-							case "left":
-								top = parseFloat(top) * 0.95;
-								left = parseFloat(left) + parseFloat(width) + 5;
-							break;
-							case "right":
-							default:
-								top = parseFloat(top) * 0.95;
-								right = parseFloat(right) - parseFloat(width) - 5;
-							break;
-							case "top":
-								top = parseFloat(top) * 0.95;
-							break;
-							case "bottom":
-								bottom = parseFloat(bottom) * 0.95;
-							break;
-						}
-						var styleHtml = "";
-						if(top != "0px"){
-							styleHtml += "top:"+top+"px;";
-						}
-						if(left != "0px"){
-							styleHtml += "left:"+left+"px;";
-						}
-						if(bottom != "0px"){
-							styleHtml += "bottom:"+bottom+"px;";
-						}
-						if(right != "0px"){
-							styleHtml += "right:"+right+"px;";
-						}
-						var html =
-						"<fieldset data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"' class='position-absolute bg-white colaSelect2 border border-warning rounded' style='"+styleHtml+"'>"+
-							"<legend class='bg-warning text-dark'>Minha Cola</legend>"+
-							"<div style='width:"+width+"px; height: "+height+"px'>"+
-								$($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")).html()+
-							"</div>"+
-						"</fieldset>";
-						$("body").append(html);
+							var styleHtml = "width:"+width+"px;height:"+height+"px;";
+							styleHtml += "left:"+positionLeft+"px;";
+							if(positionTop != "0px"){
+								styleHtml += "top:"+positionTop+"px;";
+							}
+							var html =
+							"<fieldset data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"' class='position-absolute bg-white colaSelect2 border border-warning rounded' style='"+styleHtml+"'>"+
+								"<legend class='bg-warning text-dark'>Minha Cola</legend>"+
+								"<div style='width:"+width+"px; height: "+height+"px'>"+
+									$($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")).html()+
+								"</div>"+
+							"</fieldset>";
+							$("body").append(html);
+						//}, 500);
 					});
 					$(thisObject).on("select2:close", function(){
 						$(".colaSelect2[data-copied-from='"+$(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")+"']").remove();
