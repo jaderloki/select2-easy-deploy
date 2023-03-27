@@ -75,6 +75,10 @@
 				height: 2px;
 			}
 		</style>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+		<script src="select2.customized.js"></script>
+		<script src="select2.lokiAddons.js"></script>
 	</head>
 	<body class="container-fluid vh-100 d-flex flex-column">
 		<div class="row flex-grow-1">
@@ -640,6 +644,1110 @@
 													</div>
 												</div>
 											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-placeholder attribute
+													</div>
+													<div class="position-absolute " style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute " style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="position-absolute  h-100 pt-3" style="
+																	top: 0%;
+																	left: 38px;
+																">
+																	<div class="row h-100">
+																		<div class="col-auto m-auto h-100 position-relative">
+																			<div class="vr vrConfiguration h-100 position-absolute" style="
+																				top: 0px;
+																				left: 0px;
+																			"></div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row mb-1 position-relative">
+																					<div class="col h5 titleTopic">
+																						Without data-placeholder
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select">
+																															<option disabled selected value="">Select an Item</option>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-placeholder="Select a cool item"
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-placeholder=&quot;Select a cool item&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue benis">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-placeholder="Select a cool item">
+																															<option disabled selected value="">Select an Item</option>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-pre-informed attribute
+													</div>
+													<div class="position-absolute " style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute " style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="position-absolute  h-100 pt-3" style="
+																	top: 0%;
+																	left: 38px;
+																">
+																	<div class="row h-100">
+																		<div class="col-auto m-auto h-100 position-relative">
+																			<div class="vr vrConfiguration h-100 position-absolute" style="
+																				top: 0px;
+																				left: 0px;
+																			"></div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-pre-informed
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;script&gt;
+	var dataPreInformed = [
+		{
+			id: 0,
+			text: 'CrazyImage1',
+			html: '&lt;img src=&quot;https://www.publicdomainpictures.net/pictures/90000/t2/tybee-island-lighthouse-1403954573RxH.jpg&quot; height=&quot;50&quot; width=&quot;50&quot;&gt;Image 1'
+		},
+		{
+			id: 1,
+			text: 'CrazyImage2',
+			html: '&lt;img src=&quot;https://www.publicdomainpictures.net/pictures/200000/t2/crystal-ball-on-the-bench-1478611361Iod.jpg&quot; height=&quot;50&quot; width=&quot;50&quot;&gt;Image 2'
+		},
+		{
+			id: 2,
+			text: 'CrazyImage3',
+			html: '&lt;img src=&quot;https://www.publicdomainpictures.net/pictures/210000/t2/elephant-sunset-silhouette.jpg&quot; height=&quot;50&quot; width=&quot;50&quot;&gt;Image 3'
+		}
+	];
+&lt;/script&gt;
+&lt;select class=&quot;select2-select&quot; id=&quot;select2DataPreInformed&quot;&gt;
+&lt;/select&gt;
+&lt;script&gt;
+	$(&quot;#select2DataPreInformed&quot;).data(&quot;pre-informed&quot;, dataPreInformed);
+&lt;/script&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue benis">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<script>
+																															var dataPreInformed = [
+																																{
+																																	id: 0,
+																																	text: 'CrazyImage1',
+																																	html: '<img src="https://www.publicdomainpictures.net/pictures/90000/t2/tybee-island-lighthouse-1403954573RxH.jpg" height="50" width="50">Image 1'
+																																},
+																																{
+																																	id: 1,
+																																	text: 'CrazyImage2',
+																																	html: '<img src="https://www.publicdomainpictures.net/pictures/200000/t2/crystal-ball-on-the-bench-1478611361Iod.jpg" height="50" width="50">Image 2'
+																																},
+																																{
+																																	id: 2,
+																																	text: 'CrazyImage3',
+																																	html: '<img src="https://www.publicdomainpictures.net/pictures/210000/t2/elephant-sunset-silhouette.jpg" height="50" width="50">Image 3'
+																																}
+																															];
+																														</script>
+																														<select class="select2-select" id="select2DataPreInformed">
+																														</select>
+																														<script>
+																															$("#select2DataPreInformed").data("pre-informed", dataPreInformed);
+																														</script>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-force-position attribute
+													</div>
+													<div class="position-absolute " style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute " style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="position-absolute  h-100 pt-3" style="
+																	top: 0%;
+																	left: 38px;
+																">
+																	<div class="row h-100">
+																		<div class="col-auto m-auto h-100 position-relative">
+																			<div class="vr vrConfiguration h-100 position-absolute" style="
+																				top: 0px;
+																				left: 0px;
+																			"></div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-force-position="above"
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-force-position=&quot;above&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue benis">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-force-position="above">
+																															<option disabled selected value="">Select an Item</option>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-force-position="below"
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-force-position=&quot;below&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue benis">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-force-position="below">
+																															<option disabled selected value="">Select an Item</option>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-classes attribute
+													</div>
+													<div class="position-absolute " style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute " style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="position-absolute  h-100 pt-3" style="
+																	top: 0%;
+																	left: 38px;
+																">
+																	<div class="row h-100">
+																		<div class="col-auto m-auto h-100 position-relative">
+																			<div class="vr vrConfiguration h-100 position-absolute" style="
+																				top: 0px;
+																				left: 0px;
+																			"></div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-classes="bg-warning border-danger"
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-classes=&quot;bg-warning border-danger&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue benis">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-classes="bg-warning border-danger">
+																															<option disabled selected value="">Select an Item</option>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-small attribute
+													</div>
+													<div class="position-absolute " style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute " style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="position-absolute  h-100 pt-3" style="
+																	top: 0%;
+																	left: 38px;
+																">
+																	<div class="row h-100">
+																		<div class="col-auto m-auto h-100 position-relative">
+																			<div class="vr vrConfiguration h-100 position-absolute" style="
+																				top: 0px;
+																				left: 0px;
+																			"></div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-small="1"
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-small=&quot;1&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue benis">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-small="1">
+																															<option disabled selected value="">Select an Item</option>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-value attribute
+													</div>
+													<div class="position-absolute " style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute " style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="position-absolute  h-100 pt-3" style="
+																	top: 0%;
+																	left: 38px;
+																">
+																	<div class="row h-100">
+																		<div class="col-auto m-auto h-100 position-relative">
+																			<div class="vr vrConfiguration h-100 position-absolute" style="
+																				top: 0px;
+																				left: 0px;
+																			"></div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-value="3"
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-value=&quot;3&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue benis">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-value="3">
+																															<option disabled selected value="">Select an Item</option>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item border-0">
+												<div class="row position-relative">
+													<div class="col h5 titleTopic">
+														data-ajax-link attribute
+													</div>
+													<div class="position-absolute " style="
+														bottom: 8px;
+														left: -28.5px;
+													">
+														<div class="position-relative">
+															<div class="position-absolute " style="
+																top: -12px;
+																left: -7px;
+															">
+																<i class="fa-solid fa-circle textColorBlue"></i>
+															</div>
+															<div class="extensionForHr">
+															
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col">
+														<div class="row">
+															<div class="col">
+																Description
+															</div>
+														</div>
+														<div class="row">
+															<div class="col position-relative pb-3">
+																<div class="position-absolute  h-100 pt-3" style="
+																	top: 0%;
+																	left: 38px;
+																">
+																	<div class="row h-100">
+																		<div class="col-auto m-auto h-100 position-relative">
+																			<div class="vr vrConfiguration h-100 position-absolute" style="
+																				top: 0px;
+																				left: 0px;
+																			"></div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col ms-5">
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="row position-relative">
+																					<div class="col h5 titleTopic">
+																						With data-ajax-link="https://jaderloki.github.io/select2LokiAddon/ajaxData.json"
+																					</div>
+																					<div class="position-absolute " style="
+																						bottom: 8px;
+																						left: -28.5px;
+																					">
+																						<div class="position-relative">
+																							<div class="position-absolute " style="
+																								top: -12px;
+																								left: -13px;
+																							">
+																								<i class="fa-solid fa-circle textColorBlue"></i>
+																							</div>
+																							<div class="extensionForHr">
+																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="row mx-auto">
+																					<div class="col">
+																						<div class="row">
+																							<div class="col">
+																								<div class="row">
+																									<div class="col-12">
+																										<div class="row">
+																											<div class="col-8 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 10px 0 0 0;
+																												">
+																													<div class="col textColorBlue">
+																														Example Code:
+																													</div>
+																												</div>
+																												<div class="row codeExample mx-auto pt-3 pb-0 flex-grow-1 w-100">
+																													<div class="col">
+<pre class="p-0 m-0"><code class="text-white">&lt;select class=&quot;select2-select&quot; data-value=&quot;3&quot;&gt;
+	&lt;option disabled selected value=&quot;&quot;&gt;Select an Item&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Option One&lt;/option&gt;
+	&lt;option value=&quot;2&quot;&gt;Option Two&lt;/option&gt;
+	&lt;option value=&quot;3&quot;&gt;Option Three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+																													</div>
+																												</div>
+																											</div>
+																											<div class="col-4 px-0 d-flex flex-column">
+																												<div class="row mx-auto border borderCodeExample border-2 w-100" style="
+																													border-radius: 0 10px 0 0;
+																												">
+																													<div class="col textColorBlue benis">
+																														Visual Example:
+																													</div>
+																												</div>
+																												<div class="row border border-2 borderCodeExample flex-grow-1 mx-auto w-100">
+																													<div class="col-12 mx-auto border border-5 border-5 p-3">
+																														<select class="select2-select" data-ajax-link="https://jaderloki.github.io/select2LokiAddon/ajaxData.json">
+																															<option disabled selected value="">Select an Item</option>
+																															<option value="1">Option One</option>
+																															<option value="2">Option Two</option>
+																															<option value="3">Option Three</option>
+																														</select>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -649,9 +1757,5 @@
 				</div>
 			</div>
 		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-		<script src="select2.customized.js"></script>
-		<script src="select2.lokiAddons.js"></script>
 	</body>
 </html>

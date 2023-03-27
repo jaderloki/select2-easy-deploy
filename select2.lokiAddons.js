@@ -192,8 +192,9 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 			**/
 			if($(thisObject).data("ajax-link") == undefined){
 				var dataPreInformed = null;
-				if($(thisObject).data("pre-informed") != ""){
+				if($(thisObject).data("pre-informed") != undefined && $(thisObject).data("pre-informed") != ""){
 					dataPreInformed = $(thisObject).data("pre-informed");
+					console.log("pre-informed", dataPreInformed);
 				}
 				$(thisObject).select2({
 					theme: "bootstrap",
@@ -288,12 +289,12 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 					},
 					language: {
 						searching: function() {
-							return "Procurando";
+							return "Searching";
 						}
 					},
 					templateResult: function(data) {
 						if (data.loading){
-							return "Carregando...";
+							return "Loading...";
 						}
 						if(data.html != null && data.html != ""){
 							return data.html;
