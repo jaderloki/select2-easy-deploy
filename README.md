@@ -1,4 +1,8 @@
-# Select2 - Loki Addons
-Select2 Loki Addons is a jQuery-based extension based on the original plugin [Select2](https://github.com/select2/select2) with a few extra tools i created during my time using it.
+# Select2 - Easy Deploy
+Select2 Easy Deploy is an extension for the [Select2](https://github.com/select2/select2) jQuery plugin that streamlines the deployment process. With Select2 Easy Deploy, you can quickly and easily add Select2 fields to your website without the need to create a separate script for each field on your page. Our extension includes a range of tools and features that make it simple to customize your Select2 elements to fit your website's unique style and functionality.
 
-To get started, check out examples and documentation at https://jaderloki.github.io/select2LokiAddon/
+In addition to the standard features of Select2, Select2 Easy Deploy includes a range of additional tools to make working with Select2 even easier. With this extension, you can use custom div containers with images inside the option of a select2, for static options or ajax-feed options. You can also force the position of the dropdown to above or below, and catch an element and place it together by the side of its dropdown for quick reference for the end user.
+
+Select2 Easy Deploy also allows you to send classes to the select2 span field, create a small version of the select, and automatically load a value from an option. With all these additional features and more, Select2 Easy Deploy makes it easy to create professional-grade Select2 forms in no time.
+
+Take your Select2 forms to the next level with Select2 Easy Deploy. Check out our website at https://jaderloki.github.io/select2-easy-deploy/ to learn more and get started today!

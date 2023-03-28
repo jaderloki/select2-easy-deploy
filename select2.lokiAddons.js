@@ -44,7 +44,6 @@ function buildSelect2(selectElements = ".select2-select", anonymousFunctionToBeE
 			if($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class") != "" && $(thisObject).data("create-auxiliar-absolute-div-based-on-this-class") != undefined){
 				if($($(thisObject).data("create-auxiliar-absolute-div-based-on-this-class")).length > 0){
 					$(thisObject).on("select2:resizementCompleted", function(event){
-						console.log("wtf");
 						var auxiliarAbsoluteDivPosition = "right";
 						if($(thisObject).data("auxiliar-absolute-div-position") != "" && $(thisObject).data("auxiliar-absolute-div-position") != undefined){
 							auxiliarAbsoluteDivPosition = $(thisObject).data("auxiliar-absolute-div-position");
