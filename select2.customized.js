@@ -1013,7 +1013,7 @@ S2.define('select2/results',[
     $loading.className += ' loading-results';
 	
 	/** 
-		Loki Addons: clear search cache of Select2 before the user trying to search
+		Easy Deploy Extension: clear search cache of Select2 before the user trying to search
 	**/
     //this.$results.prepend($loading);
 	this.$results.html($loading);
@@ -1619,7 +1619,7 @@ S2.define('select2/selection/single',[
     $selection[0].classList.add('select2-selection--single');
 	
 	/**
-		Loki Addons: allow dynamically spacing
+		Easy Deploy Extension: allow dynamically spacing
 	**/
     $selection.html(
       '<span class="select2-selection__rendered col-10 order-1"></span>' +
@@ -1732,7 +1732,7 @@ S2.define('select2/selection/multiple',[
     $selection[0].classList.add('select2-selection--multiple');
 	
 	/**
-		Loki Addons: allow dynamically spacing
+		Easy Deploy Extension: allow dynamically spacing
 	**/
     $selection.html(
       '<ul class="select2-selection__rendered col-10 order-1"></ul>'
@@ -2031,7 +2031,7 @@ S2.define('select2/selection/allowClear',[
     var removeAll = this.options.get('translations').get('removeAllItems');
 	
 	/**
-		Loki Addons: allow dynamically spacing
+		Easy Deploy Extension: allow dynamically spacing
 	**/
     var $remove = $(
       '<button type="button" class="select2-selection__clear col-auto order-2 mb-auto" tabindex="-1">' +
@@ -2321,7 +2321,7 @@ S2.define('select2/selection/eventRelay',[
     var self = this;
     var relayEvents = [
       'open', 'opening',
-	  'resizementCompleted', // Loki Addons: added the resizementCompleted event to the allowed select2 events
+	  'resizementCompleted', // Easy Deploy Extension: added the resizementCompleted event to the allowed select2 events
       'close', 'closing',
       'select', 'selecting',
       'unselect', 'unselecting',
@@ -4676,7 +4676,7 @@ S2.define('select2/dropdown/attachBody',[
 
     this.$dropdownContainer.css(css);
 	/**
-		Loki Addons: trigger when its dropdown css events are completed
+		Easy Deploy Extension: trigger when its dropdown css events are completed
 	**/
 	this.trigger("resizementCompleted");
   };
@@ -5118,7 +5118,7 @@ S2.define('select2/defaults',[
     options.language = this._resolveLanguage(options.language);
 
     /**
-		Loki Addons: allow opening of search bar by typing certain keys while focused
+		Easy Deploy Extension: allow opening of search bar by typing certain keys while focused
     **/
     if (options.disableSearchFilterByPressingEnterWhileFocused != null) {
         options.disableSearchFilterByPressingEnterWhileFocused = options.disableSearchFilterByPressingEnterWhileFocused;
@@ -5814,7 +5814,7 @@ S2.define('select2/core',[
         }
       } else {
           /**
-			Loki Addons: verify if its activated the option of opening the search bar by typing
+			Easy Deploy Extension: verify if its activated the option of opening the search bar by typing
           */
         if ((!this.options.get('disableSearchFilterByPressingEnterWhileFocused') && key === KEYS.ENTER) || key === KEYS.SPACE ||
             (key === KEYS.DOWN && evt.altKey)) {
